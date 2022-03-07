@@ -2,11 +2,12 @@ version: '3.7'
 services:
   tarsnap:
     init: true
+    restart: always
     logging:
       driver: "json-file"
       options:
-        max-file: 5
-        max-size: 10m
+        max-file: "5"
+        max-size: "10m"
     image: johnthenerd/tarsnap
     healthcheck:
       test: ps aux | grep cron | grep -v grep
