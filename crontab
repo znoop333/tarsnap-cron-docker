@@ -1,0 +1,3 @@
+PATH='/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+
+0 2 * * * tarsnap --keyfile /var/run/secrets/tarsnap --cachedir /cache -c -f $(date +%Y-%m-%d) /backup
