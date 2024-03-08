@@ -24,3 +24,11 @@ Automated Tarsnap backups through a Docker container, cross-built for amd64, arm
 - If you're using docker-compose, run `docker-compose up`.
 
 - If you're using Docker Swarm, create write-only Tarsnap keys and create a secret named `tarsnap` that contains this key. Afterwards, run `docker stack deploy --compose-file docker-compose.yml tarsnap`.
+
+## WSL2 fixes
+
+- Make a volume with 'docker volume create data'
+- Launch the container locally to mount the volume
+- Copy files into it with 'docker cp __files__ container:/data/backup'
+- The crontab now looks in /data/backup , and the cache directory is also under /data
+
