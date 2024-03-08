@@ -54,5 +54,14 @@ ADD crontab /var/run/crontab
 
 RUN mkdir -p /var/run/secrets
 RUN mkdir -p /cache
+RUN mkdir -p /data
+
+# https://mail.tarsnap.com/tarsnap-users/msg00037.html
+ENV LC_ALL=C
+ENV LANG=C
+ENV LANGUAGE=C
+
+RUN dpkg-reconfigure locales
+
 
 CMD ["bash", "-c", "/entrypoint.sh"]
