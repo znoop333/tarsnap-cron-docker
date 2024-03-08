@@ -21,7 +21,7 @@ fi
 if [ -z "$(ls -A /cache)" ]; then
   # make sure we have read permissions before running fsck
   if [[ -z "$(echo $key_permissions | grep reading)" ]] ; then
-     tarsnap --keyfile /var/run/secrets/tarsnap --cachedir /cache --fsck
+     tarsnap --keyfile /var/run/secrets/tarsnap --cachedir /data/cache --fsck
   fi
 fi
 
